@@ -1,72 +1,69 @@
-"use client";
 import React from 'react';
 
-export default function AdminDashboard() {
+export default function HomePage() {
   return (
-    <div className="flex h-screen bg-slate-50 font-sans text-slate-900">
-      {/* 侧边导航栏 - 天垠品牌 */}
-      <aside className="w-72 bg-tianyin-blue text-white flex flex-col shadow-2xl">
-        <div className="p-8 border-b border-white/10 text-center">
-          <h1 className="text-2xl font-black tracking-tighter">TIANYIN</h1>
-          <p className="text-[10px] opacity-60 uppercase tracking-widest mt-1">Management Portal</p>
+    <div className="flex flex-col">
+      {/* Hero Section - 主视觉 */}
+      <section className="relative h-[85vh] bg-slate-900 flex items-center overflow-hidden">
+        {/* 背景图建议后期换成真实的变电站工程图 */}
+        <div className="absolute inset-0 opacity-50">
+          <img 
+            src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=1600&q=80" 
+            className="w-full h-full object-cover"
+            alt="Power Grid"
+          />
         </div>
         
-        <nav className="flex-1 px-4 py-8 space-y-2">
-          <div className="text-[10px] px-6 text-white/40 uppercase font-bold mb-2">Main Menu</div>
-          <button className="w-full text-left px-6 py-3 bg-white/10 rounded-xl font-bold">Navigation Setup</button>
-          <button className="w-full text-left px-6 py-3 hover:bg-white/5 transition rounded-xl">Product Library</button>
-          <button className="w-full text-left px-6 py-3 hover:bg-white/5 transition rounded-xl text-white/70 italic text-sm">PDF Asset Manager</button>
-        </nav>
-
-        <div className="p-6 border-t border-white/10 text-[10px] opacity-40 text-center">
-          © 2026 TIANYIN TECHNOLOGY
-        </div>
-      </aside>
-
-      {/* 主展示区 */}
-      <main className="flex-1 flex flex-col overflow-hidden">
-        <header className="h-20 bg-white border-b px-10 flex justify-between items-center shadow-sm">
-          <h2 className="text-lg font-bold text-slate-600 uppercase tracking-tight">Current Inventory</h2>
-          <div className="flex items-center space-x-6">
-            <div className="flex flex-col text-right">
-              <span className="text-xs font-bold">Calvin Su</span>
-              <span className="text-[10px] text-green-500 font-medium leading-none">● Online</span>
+        <div className="relative max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-3xl space-y-8">
+            <h1 className="text-5xl md:text-7xl font-black text-white leading-tight uppercase">
+              Proven Power<br />
+              <span className="text-tianyin-blue italic">Industry Heritage.</span>
+            </h1>
+            <p className="text-xl text-slate-300 leading-relaxed font-light">
+              Leveraging decades of experience with ABB, Hitachi Energy, and Siemens to provide 
+              world-class GIS, VCB, and Distribution Automation solutions from China to the World.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <button className="bg-tianyin-blue text-white px-10 py-4 font-black rounded-sm hover:bg-white hover:text-tianyin-blue transition-all">
+                EXPLORE SOLUTIONS
+              </button>
+              <button className="border border-white/30 text-white px-10 py-4 font-black rounded-sm hover:bg-white/10 transition-all">
+                DOWNLOAD CATALOGUE
+              </button>
             </div>
-            <button className="bg-tianyin-blue text-white px-6 py-2.5 rounded-full text-sm font-black hover:bg-blue-700 transition shadow-lg shadow-blue-200">
-              + ADD PRODUCT
-            </button>
           </div>
-        </header>
+        </div>
+      </section>
 
-        <section className="flex-1 p-10 overflow-y-auto">
-          {/* 表格容器 */}
-          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-slate-50/50 text-slate-400 text-[11px] uppercase tracking-widest border-b">
-                  <th className="px-8 py-6 font-black">Model / Item</th>
-                  <th className="px-8 py-6 font-black">Sub-Category</th>
-                  <th className="px-8 py-6 font-black">Technical PDF</th>
-                  <th className="px-8 py-6 text-right font-black">Operations</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm text-slate-600 divide-y divide-slate-50">
-                <tr className="hover:bg-blue-50/20 transition group">
-                  <td className="px-8 py-6 font-bold text-slate-800">145kV GIS Switchgear</td>
-                  <td className="px-8 py-6 underline decoration-slate-200 underline-offset-4">Power Product / Switchgear</td>
-                  <td className="px-8 py-6">
-                    <span className="bg-blue-50 text-tianyin-blue px-3 py-1 rounded-full text-[11px] font-bold">elk_04_specs.pdf</span>
-                  </td>
-                  <td className="px-8 py-6 text-right space-x-4">
-                    <button className="text-slate-400 hover:text-tianyin-blue font-bold">Edit</button>
-                    <button className="text-slate-300 hover:text-red-500 font-bold">Delete</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+      {/* 产品快速导航预览 */}
+      <section id="products" className="py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h2 className="text-tianyin-blue font-black text-sm uppercase tracking-[0.3em] mb-4 text-center md:text-left">Our Portfolio</h2>
+              <p className="text-4xl font-bold text-slate-800">Advanced Power Infrastructure</p>
+            </div>
+            <p className="text-slate-500 max-w-sm">Reliable, high-performance equipment tested under the most rigorous global standards.</p>
           </div>
-        </section>
-      </main>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-slate-200 border border-slate-200">
+            {/* 产品占位卡片 */}
+            {[
+              {title: "GIS Switchgear", sub: "145kV - 1100kV Gas Insulated"},
+              {title: "Vacuum Breakers", sub: "Indoor & Outdoor VCBs"},
+              {title: "Distribution Automation", sub: "Smart Grid RTU & Controls"}
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white p-12 hover:bg-tianyin-blue hover:text-white transition-all group cursor-pointer">
+                <div className="text-tianyin-blue group-hover:text-white mb-8 text-4xl font-light">0{idx+1}</div>
+                <h3 className="text-2xl font-bold mb-4 uppercase">{item.title}</h3>
+                <p className="opacity-60 mb-10 text-sm font-medium">{item.sub}</p>
+                <div className="font-black text-xs tracking-widest uppercase border-b-2 border-current inline-block pb-1">View Details →</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
