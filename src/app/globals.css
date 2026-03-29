@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+/* 关键逻辑：Tailwind v4 的新配置方式 */
+@theme {
+  /* 定义天垠品牌中蓝色 */
+  --color-tianyin-blue: #0062cc;
+  --color-tianyin-dark: #003366;
+  
+  /* 也可以定义字体、间距等，都在这里写 */
+}
+
+/* 下面可以写你自己的原始 CSS */

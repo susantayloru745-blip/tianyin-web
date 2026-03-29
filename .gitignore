@@ -1,34 +1,41 @@
-# 依赖库（最占空间，绝对不要上传）
-node_modules/
-jspm_packages/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# 构建产物（代码编译后的结果，由服务器自动生成）
-dist/
-build/
-.next/
-out/
-bin/
-obj/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# 环境配置文件（包含 API 密钥、数据库密码等敏感信息，严禁上传！）
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# testing
+/coverage
 
-# 调试日志
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-logs/
-*.log
+.pnpm-debug.log*
 
-# 操作系统临时文件（苹果或 Windows 自动生成的杂物）
-.DS_Store
-Thumbs.db
+# env files (can opt-in for committing if needed)
+.env*
 
-# 编辑器私有配置（如 VS Code 的本地设置）
-.vscode/
-.idea/
-*.swp
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
